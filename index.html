@@ -616,12 +616,15 @@
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
     gap: 34px;
     align-items: stretch;
+    justify-items: center;
   }
 
   .doctor-card {
+    width: 100%;
+    max-width: 360px;
     background: var(--white);
     overflow: hidden;
     transition: all 0.35s ease;
@@ -1593,7 +1596,7 @@
     <!-- Doctor 3 -->
     <div class="doctor-card reveal reveal-delay-2">
       <div class="doctor-img-wrap">
-        <img src="verina-removebg-preview.png" alt="Dr. Verina Hany" class="doctor-photo" onclick="openImage(this.src)" loading="lazy">
+        <img src="verina-removebg-preview.png" alt="Dr. Verina Hany" class="doctor-photo" onclick="openImage(this.src)" loading="lazy" style="object-fit: cover; object-position: center;">
         <!-- <div class="doctor-specialty-badge">Veterinary dentistry</div> -->
       </div>
       <div class="doctor-info">
