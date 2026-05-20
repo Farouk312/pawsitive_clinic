@@ -624,7 +624,7 @@
 
   .doctor-card {
     width: 100%;
-    max-width: 360px;
+    max-width: 380px;
     background: var(--white);
     overflow: hidden;
     transition: all 0.35s ease;
@@ -655,7 +655,7 @@
 
   .doctor-img-wrap {
     position: relative;
-    height: 290px;
+    height: 330px;
     overflow: hidden;
     background: transparent;
   }
@@ -673,7 +673,21 @@
     object-position: center 18%;
   }
 
+  .doctor-photo.beshoy {
+    transform: scale(1.5);
+    object-position: center -8%;
+  }
+
+  .doctor-photo.khaled {
+    transform: scale(1.38);
+    object-position: center -8%;
+  }
+
   .doctor-card:hover .doctor-img-wrap img { transform: scale(1.06); }
+  .doctor-card:hover .doctor-img-wrap img.beshoy,
+  .doctor-card:hover .doctor-img-wrap img.khaled { transform: scale(1.42); }
+  .doctor-card:hover .doctor-img-wrap img.beshoy,
+  .doctor-card:hover .doctor-img-wrap img.khaled { transform: scale(1.28); }
 
   .img-modal {
     position: fixed;
@@ -831,10 +845,36 @@
 
   .stars { color: var(--gold); font-size: 15px; letter-spacing: 3px; margin-bottom: 32px; }
 
-  .testimonials-nav { display: flex; justify-content: center; gap: 10px; margin-top: 44px; }
+  .testimonial-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 44px;
+    flex-wrap: wrap;
+  }
+
+  .testimonial-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 20px rgba(91, 143, 168, 0.18);
+  }
+
+  .testimonial-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .testimonials-nav { display: flex; justify-content: center; gap: 10px; }
 
   .t-dot {
-    width: 8px; height: 8px;
+    width: 10px; height: 10px;
     border-radius: 50%;
     background: var(--blue-light);
     cursor: pointer;
@@ -842,7 +882,15 @@
     border: none;
   }
 
-  .t-dot.active { background: var(--blue); width: 26px; border-radius: 4px; }
+  .t-dot.active { background: var(--blue); width: 28px; border-radius: 6px; }
+
+  .testimonial-status {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--text-mid);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
 
   /* ============ GALLERY ============ */
   #gallery { padding: 100px 0; }
@@ -1374,7 +1422,7 @@
     .services-header { padding: 0; }
     .team-header { margin-bottom: 40px; }
     .doctor-card { border-radius: 16px; }
-    .doctor-img-wrap { height: 220px; }
+    .doctor-img-wrap { height: 260px; }
     .contact-form { padding: 32px 24px; }
     footer { padding: 44px 20px 28px; }
     .whatsapp-float { bottom: 20px; left: 20px; width: 50px; height: 50px; font-size: 24px; }
@@ -1454,7 +1502,7 @@
     <div class="stat-label">Years of Experience</div>
   </div>
   <div class="stat-item reveal reveal-delay-2">
-    <div class="stat-num">8</div>
+    <div class="stat-num">6</div>
     <div class="stat-label">Specialist Vets</div>
   </div>
   <div class="stat-item reveal reveal-delay-3">
@@ -1509,35 +1557,54 @@
       <h3 class="service-title">Exams & diagnostics</h3>
       <p class="service-desc">Thorough veterinary exams with advanced imaging and diagnostics for precise care.</p>
     </div>
-    <div class="service-card reveal reveal-delay-1">
-      <div class="service-num">02</div>
-      <div class="service-icon">💊</div>
-      <h3 class="service-title">Treatment & medication</h3>
-      <p class="service-desc">Specialized treatment plans and careful follow-up with globally trusted medications.</p>
-    </div>
+    
     <div class="service-card reveal reveal-delay-2">
-      <div class="service-num">03</div>
+      <div class="service-num">02</div>
       <div class="service-icon">🔬</div>
       <h3 class="service-title">Specialized surgery</h3>
       <p class="service-desc">State-of-the-art surgery suites led by highly experienced veterinary surgeons.</p>
     </div>
     <div class="service-card reveal">
-      <div class="service-num">04</div>
+      <div class="service-num">03</div>
       <div class="service-icon">💉</div>
       <h3 class="service-title">Preventive vaccinations</h3>
       <p class="service-desc">Complete vaccination programs following the latest international guidelines.</p>
     </div>
     <div class="service-card reveal reveal-delay-1">
-      <div class="service-num">05</div>
+      <div class="service-num">04</div>
       <div class="service-icon">🛁</div>
       <h3 class="service-title">Grooming & care</h3>
       <p class="service-desc">Premium grooming services including baths, trims, and paw care in a calm setting.</p>
     </div>
     <div class="service-card reveal reveal-delay-2">
-      <div class="service-num">06</div>
+      <div class="service-num">05</div>
       <div class="service-icon">🚨</div>
       <h3 class="service-title">Round-the-clock emergency</h3>
       <p class="service-desc">Emergency team available 24/7 to handle urgent cases quickly and safely.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-num">06</div>
+      <div class="service-icon">🩻</div>
+      <h3 class="service-title">X-ray Imaging</h3>
+      <p class="service-desc">High-resolution radiography for bone, chest, and internal diagnostics.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-num">07</div>
+      <div class="service-icon">📡</div>
+      <h3 class="service-title">Sonar Ultrasound</h3>
+      <p class="service-desc">Advanced ultrasound exams for soft tissue, abdominal, and cardiac evaluation.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-num">08</div>
+      <div class="service-icon">🏨</div>
+      <h3 class="service-title">Boarding & hospitalization</h3>
+      <p class="service-desc">Comfortable overnight stays and full hospitalization with constant nursing care.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-num">09</div>
+      <div class="service-icon">🏪</div>
+      <h3 class="service-title">Store & pharmacy</h3>
+      <p class="service-desc">On-site pharmacy and veterinary supplies, including premium dry food for pets, for seamless treatment and recovery.</p>
     </div>
   </div>
 </section>
@@ -1571,7 +1638,7 @@
     <!-- Doctor 2 -->
     <div class="doctor-card reveal reveal-delay-1">
       <div class="doctor-img-wrap">
-        <img src="beshoy-removebg-preview.png" alt="Beshoy Reyad" class="doctor-photo shift-up" onclick="openImage(this.src)" loading="lazy">
+        <img src="beshoy-removebg-preview.png" alt="Beshoy Reyad" class="doctor-photo shift-up beshoy" onclick="openImage(this.src)" loading="lazy">
         <!-- <div class="doctor-specialty-badge">Surgery</div> -->
       </div>
       <div class="doctor-info">
@@ -1581,21 +1648,6 @@
         <!-- <div class="doctor-bio">Experienced operations manager with a strong background in veterinary clinic administration and customer service. Oversees daily operations, ensuring smooth coordination between medical staff and clients while maintaining the highest standards of care and efficiency.</div> -->
       </div>
     </div>
-
-    <div class="doctor-card reveal">
-      <div class="doctor-img-wrap">
-        <img src="mostafa-removebg-preview.png" alt="Dr. Mostafa Sameh" class="doctor-photo" onclick="openImage(this.src)" loading="lazy">
-        <!-- <div class="doctor-specialty-badge">Founder</div> -->
-      </div>
-      <div class="doctor-info">
-        <div class="doctor-name">Dr. Mostafa Sameh</div>
-        <div class="doctor-role">DVM</div>
-        <div class="doctor-divider"></div>
-        <!-- <div class="doctor-bio">Highly skilled veterinarian with over 9 years of experience in diagnosing and treating complex medical conditions in dogs and cats. Known for his exceptional clinical expertise, accurate diagnoses, and dedication to providing the highest standard of veterinary care.</div> -->
-      </div>
-    </div>
-
-
 
     <!-- Doctor 3 -->
     <div class="doctor-card reveal reveal-delay-2">
@@ -1628,7 +1680,7 @@
     <!-- Doctor 5 -->
     <div class="doctor-card reveal reveal-delay-3">
       <div class="doctor-img-wrap">
-        <img src="khaled-removebg-preview.png" alt="Dr. Khaled Wahdan" class="doctor-photo" onclick="openImage(this.src)" loading="lazy">
+        <img src="khaled-removebg-preview.png" alt="Dr. Khaled Wahdan" class="doctor-photo khaled" onclick="openImage(this.src)" loading="lazy">
         <!-- <div class="doctor-specialty-badge">Dermatology</div> -->
       </div>
       <div class="doctor-info">
@@ -1636,6 +1688,19 @@
         <div class="doctor-role">DVM</div>
         <div class="doctor-divider"></div>
         <!-- <div class="doctor-bio">Dedicated veterinarian with expertise in internal medicine and comprehensive pet healthcare. Passionate about providing attentive, personalized care to ensure pets live healthier and happier lives.</div> -->
+      </div>
+    </div>
+
+    <div class="doctor-card reveal">
+      <div class="doctor-img-wrap">
+        <img src="mostafa-removebg-preview.png" alt="Dr. Mostafa Sameh" class="doctor-photo" onclick="openImage(this.src)" loading="lazy">
+        <!-- <div class="doctor-specialty-badge">Founder</div> -->
+      </div>
+      <div class="doctor-info">
+        <div class="doctor-name">Dr. Mostafa Sameh</div>
+        <div class="doctor-role">DVM</div>
+        <div class="doctor-divider"></div>
+        <!-- <div class="doctor-bio">Highly skilled veterinarian with over 9 years of experience in diagnosing and treating complex medical conditions in dogs and cats. Known for his exceptional clinical expertise, accurate diagnoses, and dedication to providing the highest standard of veterinary care.</div> -->
       </div>
     </div>
 
@@ -1673,20 +1738,32 @@
     <div class="stars reveal">★ ★ ★ ★ ★</div>
     <div class="testimonial-slider">
       <p class="testimonial-quote reveal" id="tQuote">
-        "Pawsitive Clinic changed my view of veterinary care. The vets are so professional, and the clean calm space made my cat feel relaxed."
+        "Dr Marco and his team are the best, after several experiences with different vets in Cairo I am super happy that I landed at Pawsitive. Super organized and clean clinic. The medical team are always updated and informed. The store is always packed with goodies for my fur baby."
       </p>
       <div class="testimonial-author reveal">
         <div>
-          <div class="author-name" id="tName">Noor Ibrahim</div>
-          <div class="author-pet" id="tPet">Persian cat owner 🐱</div>
+          <div class="author-name" id="tName">Marwa El Hakeem</div>
+          <div class="author-pet" id="tPet">Pet owner 🐾</div>
         </div>
-        <div class="author-avatar">🐱</div>
+        <div class="author-avatar" id="tAvatar">🐾</div>
       </div>
     </div>
-    <div class="testimonials-nav">
-      <button class="t-dot active" onclick="changeTes(0)"></button>
-      <button class="t-dot" onclick="changeTes(1)"></button>
-      <button class="t-dot" onclick="changeTes(2)"></button>
+    <div class="testimonial-controls">
+      <button class="testimonial-btn" onclick="prevTes()">‹</button>
+      <div class="testimonials-nav">
+        <button class="t-dot active" onclick="changeTes(0)"></button>
+        <button class="t-dot" onclick="changeTes(1)"></button>
+        <button class="t-dot" onclick="changeTes(2)"></button>
+        <button class="t-dot" onclick="changeTes(3)"></button>
+        <button class="t-dot" onclick="changeTes(4)"></button>
+        <button class="t-dot" onclick="changeTes(5)"></button>
+        <button class="t-dot" onclick="changeTes(6)"></button>
+      </div>
+      <button class="testimonial-btn" onclick="nextTes()">›</button>
+    </div>
+    <div class="testimonial-status">Review <span id="tIndex">1</span> of <span id="tTotal">7</span></div>
+    <div class="testimonial-more" style="margin-top:22px; text-align:center;">
+      <a href="https://maps.app.goo.gl/LqnbYPrqXustBb5bA" target="_blank" class="btn-outline">See more reviews on Google Maps</a>
     </div>
   </div>
 </section>
@@ -1922,26 +1999,57 @@
   // TESTIMONIALS
   const testimonials = [
     {
-      quote: '"Pawsitive Clinic changed my view of veterinary care. The vets were extremely professional, and the clean calm space made my cat feel completely comfortable."',
-      name: 'Noor Ibrahim',
-      pet: 'Persian cat owner 🐱',
+      quote: '"Dr Marco and his team are the best, after several experiences with different vets in Cairo I am super happy that I landed at Pawsitive. Super organized and clean clinic. The medical team are always updated and informed. The store is always packed with goodies for my fur baby."',
+      name: 'Marwa El Hakeem',
+      pet: 'Pet owner 🐾',
+      emoji: '🐾'
+    },
+    {
+      quote: '"A very professional clinic, I came with my cat after visiting several clinics with no solution, Pawsitive clinic give my pet the best treatment. The most important for me that they love my Mocha and they are taking a good care of him. Thank you so much."',
+      name: 'Noha Hammam',
+      pet: 'Mocha owner 🐱',
       emoji: '🐱'
     },
     {
-      quote: '"The best veterinary clinic I have visited in Egypt. Expert team, modern equipment, and excellent post-care follow-up. Thank you, Pawsitive team."',
-      name: 'Ahmed El-Sherif',
-      pet: 'Labrador owner 🐕',
-      emoji: '🐕'
+      quote: '"Pawsitive Veterinary Clinic in Maadi is highly praised for its clean, well-organized environment and professional staff. The reception team is friendly, efficient, and welcoming, while the doctors are experienced, compassionate, and take time to explain treatments clearly. The clinic is known for maintaining high hygiene standards, with regular disinfection and a spotless interior. It also features a well-stocked pet store and pharmacy, making it convenient for pet owners to access medications and supplies in one place. Overall, Pawsitive offers excellent care in a warm and reliable setting."',
+      name: 'Bavly Ashraf',
+      pet: 'Pet owner 🐾',
+      emoji: '🐾'
     },
     {
-      quote: '"Dr. Sara performed a very successful surgery on my dog. The place is luxurious, clean, and the service is very classy. I recommend it to all pet lovers."',
-      name: 'Yasmine Khaled',
-      pet: 'Golden Retriever owner 🐩',
-      emoji: '🐩'
+      quote: '"I can’t thank Dr. Marco enough for what he did for my dog. The surgery was very risky, and I was honestly terrified, but Dr. Marco handled everything with incredible professionalism, confidence, and care. The operation was a complete success and was done perfectly. I highly recommend Dr. Marco to anyone who wants the best care for their pet."',
+      name: 'Mina Refaat',
+      pet: 'Dog owner 🐶',
+      emoji: '🐶'
+    },
+    {
+      quote: '"Best Clinic ever .. Very helpful, professional team (all doctors, reception, assistant, Manager). And they are working 24/7 it’s a very good thing. The Grooming is very kind with dogs. Very Very Clean. Thank you for everything ❤️"',
+      name: 'MichAel Wagdy',
+      pet: 'Pet owner ❤️',
+      emoji: '❤️'
+    },
+    {
+      quote: '"This veterinary clinic truly saved my cat’s life. The level of professionalism, expertise, and compassion shown by the entire team was exceptional. They acted quickly, explained everything clearly, and treated my cat with genuine care and dedication. I am deeply grateful for their outstanding service and would highly recommend this clinic to anyone seeking the highest standard of veterinary care."',
+      name: 'Rahma Salah',
+      pet: 'Cat owner 🐱',
+      emoji: '🐱'
+    },
+    {
+      quote: '"I cannot give enough praise for this wonderful clinic. The whole team is so professional, experienced and kind. The clinic is spotless and fully equipped, with everything you could possibly need, including grooming. They are open 24/7, so if you have an emergency you will always find a vet available. They follow up and send you reminders, regarding vaccines and de-worming. Just an overall perfect experience all around."',
+      name: 'Sophie Rindlisbacher',
+      pet: 'Local Guide',
+      emoji: '🌟'
     }
   ];
 
   let currentTes = 0;
+
+  function updateTestimonialIndex(idx) {
+    const indexEl = document.getElementById('tIndex');
+    const totalEl = document.getElementById('tTotal');
+    if (indexEl) indexEl.textContent = idx + 1;
+    if (totalEl) totalEl.textContent = testimonials.length;
+  }
 
   function changeTes(idx) {
     currentTes = idx;
@@ -1949,21 +2057,33 @@
     const q = document.getElementById('tQuote');
     const n = document.getElementById('tName');
     const p = document.getElementById('tPet');
+    const a = document.getElementById('tAvatar');
     q.style.opacity = 0;
     q.style.transform = 'translateY(12px)';
     setTimeout(() => {
       q.textContent = t.quote;
       n.textContent = t.name;
       p.textContent = t.pet;
+      a.textContent = t.emoji;
       q.style.opacity = 1;
       q.style.transform = 'translateY(0)';
     }, 320);
     document.querySelectorAll('.t-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+    updateTestimonialIndex(idx);
+  }
+
+  function prevTes() {
+    changeTes((currentTes - 1 + testimonials.length) % testimonials.length);
+  }
+
+  function nextTes() {
+    changeTes((currentTes + 1) % testimonials.length);
   }
 
   const tq = document.getElementById('tQuote');
   tq.style.transition = 'opacity 0.32s ease, transform 0.32s ease';
-  setInterval(() => changeTes((currentTes + 1) % 3), 5500);
+  updateTestimonialIndex(0);
+  setInterval(() => nextTes(), 5500);
 
   // FORM SUBMIT
   function submitForm() {
