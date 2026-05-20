@@ -1502,7 +1502,7 @@
     <div class="stat-label">Years of Experience</div>
   </div>
   <div class="stat-item reveal reveal-delay-2">
-    <div class="stat-num">6</div>
+    <div class="stat-num">5</div>
     <div class="stat-label">Specialist Vets</div>
   </div>
   <div class="stat-item reveal reveal-delay-3">
@@ -1537,6 +1537,10 @@
         <div class="feature-pill reveal reveal-delay-3"><span class="icon">🚨</span> 24/7 emergency care</div>
         <div class="feature-pill reveal"><span class="icon">🛁</span> Grooming & wellness</div>
         <div class="feature-pill reveal reveal-delay-1"><span class="icon">🐾</span> Ongoing follow-up</div>
+        <div class="feature-pill reveal reveal-delay-2"><span class="icon">🏨</span> Boarding & hospitalization</div>
+        <div class="feature-pill reveal reveal-delay-3"><span class="icon">🛒</span> Store & pharmacy</div>
+        <div class="feature-pill reveal reveal-delay-4"><span class="icon">🩺</span> Sonar</div>
+        <div class="feature-pill reveal reveal-delay-1"><span class="icon">🩻</span> X‑ray</div>
       </div>
     </div>
   </div>
@@ -2149,7 +2153,7 @@
         const nums = document.querySelectorAll('.stat-num');
         animateCounter(nums[0], 5000, '+');
         animateCounter(nums[1], 10, '+');
-        nums[2].textContent = '8';
+        animateCounter(nums[2], 5);
         nums[3].textContent = '24/7';
         statsObserver.disconnect();
       }
